@@ -1,0 +1,35 @@
+@import "variables";
+
+header {
+  background-color: $blackColor;
+  overflow: visible
+}
+
+.header-container {
+  @extend %container;
+  justify-content: space-between;
+}
+
+.logo {
+  color: $whiteColor;
+  overflow: hidden;
+  height: 20px;
+}
+
+.signIn {
+  background-color: transparent;
+  border: none;
+  color: $whiteColor;
+  font-family: $comfortaaRegular;
+  transition: all 0.3s;
+  cursor: pointer;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+
+  &:hover {
+    background-size: 100% 1px;
+    color: $orangeColor;
+  }
+}

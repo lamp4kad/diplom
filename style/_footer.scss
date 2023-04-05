@@ -1,0 +1,59 @@
+footer{
+  background-color: $blackColor;
+  overflow: visible
+}
+
+.footer-container{
+  @extend %container;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.creater-text{
+  height: 17px;
+  color: white;
+}
+
+.contacts{
+  display: flex;
+  column-gap: 15px;
+  overflow: hidden;
+  .vk{
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    .vk-img{
+      background: url("../assets/svg/vkLogo.svg") no-repeat;
+      background-size: cover;
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  .inst{
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+
+    .inst-img{
+      background: url("../assets/svg/instLogo.svg") no-repeat;
+      background-size: cover;
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  .git{
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+
+    .git-img{
+      background: url("../assets/svg/gitLogo.svg") no-repeat;
+      background-size: cover;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+

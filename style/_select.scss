@@ -1,0 +1,72 @@
+.select-wrapper {
+  min-width: 100px;
+  overflow: visible;
+  position: relative;
+}
+
+.select {
+  position: relative;
+  padding: 5px 20px 5px 5px;
+  border: 2px solid black;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.5s;
+  overflow: hidden;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 14px;
+    transform: translateY(-50%);
+    right: 3px;
+    content: "";
+    background: url("../assets/svg/arrowdown.svg");
+    width: 15px;
+    height: 15px;
+  }
+
+  &.open {
+    max-height: 100px;
+    border-bottom: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
+
+.select-menu {
+  opacity: 0;
+  width: 100%;
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 0.5s;
+  border: 2px solid black;
+  border-radius: 7px;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+
+  &.open {
+    opacity: 1;
+    max-height: 70px;
+    border-top: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+
+    &.cities, &.towns {
+      max-height: 170px;
+      overflow: auto;
+    }
+  }
+}
+
+.select-item {
+  cursor: pointer;
+  overflow: hidden;
+  padding: 5px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $orangeColor;
+    filter: brightness(1.3);
+  }
+}

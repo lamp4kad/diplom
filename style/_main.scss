@@ -1,0 +1,667 @@
+@import "select";
+
+@keyframes backOpen {
+  0% {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  100% {
+    opacity: 0.5;
+    z-index: 2;
+  }
+}
+
+@keyframes backClose {
+  0% {
+    opacity: 0.5;
+    z-index: 2;
+  }
+
+  99% {
+    z-index: 2;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes authOpen {
+  0% {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+@keyframes authClose {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  99% {
+    z-index: 2;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+body {
+  font-family: $comfortaaRegular;
+}
+
+.filters {
+  width: 100%;
+  overflow: visible;
+}
+
+.filters-container {
+  @extend %container;
+  align-items: flex-start;
+  background-color: transparent;
+  column-gap: 20px;
+  overflow: visible;
+}
+
+.price,
+.price:focus,
+.search,
+.search:focus {
+  font-family: $comfortaaRegular;
+  border: none;
+  padding: 5px 5px 5px 0px;
+  margin-left: 30px;
+  outline: none;
+  max-width: 100%;
+}
+
+.search,
+.search:focus {
+  width: 100%;
+  max-width: 670px;
+}
+
+.price-wrapper {
+  border-bottom: 2px solid black;
+  position: relative;
+  min-width: 200px;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 14px;
+    transform: translateY(-50%);
+    left: 3px;
+    content: "";
+    background: url("../assets/svg/coins.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.search-wrapper {
+  position: relative;
+  border-bottom: 2px solid black;
+  width: 100%;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 14px;
+    transform: translateY(-50%);
+    left: 3px;
+    content: "";
+    background: url("../assets/svg/search.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.price::-webkit-outer-spin-button,
+.price::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.asseptBtn {
+  padding: 7px;
+  color: $whiteColor;
+  font-family: $comfortaaRegular;
+  background-color: $blackColor;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-image: linear-gradient($orangeColor, $orangeColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 30px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-size: 100% 30px;
+  }
+}
+
+.items {
+  width: 100%;
+}
+
+.items-container {
+  @extend %container;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.items-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: visible;
+  margin: 0px -10px;
+}
+
+.itemLink{
+  color: $blackColor;
+}
+
+.item {
+  min-width: 25%;
+  max-width: 25%;
+  transition: all 0.3s;
+  padding: 10px 10px;
+
+  .item-wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .item-picture {
+    padding-bottom: 90.84%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .item-title {
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .title {
+      overflow: hidden;
+      font-weight: bold;
+      font-size: large;
+    }
+
+    .cost{
+      overflow: hidden;
+      font-weight: bold;
+      font-size: large;
+    }
+  }
+
+  .item-description {
+    margin-top: 10px;
+    padding: 0px 5px 5px 5px;
+    max-height: 19px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    overflow: hidden;
+
+    .description {
+      overflow: hidden;
+      font-weight: lighter;
+      font-size: smaller;
+      color: rgb(38, 38, 38);
+    }
+  }
+
+  .item-open {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+
+    .open-item {
+      border: 2px solid black;
+      padding: 5px 15%;
+      border-radius: 7px;
+      font-weight: bold;
+      color: $blackColor;
+      background-image: linear-gradient($orangeColor, $orangeColor);
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 30px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-size: 100% 30px;
+        color: $whiteColor;
+      }
+    }
+  }
+
+  &:hover {
+    scale: 1.1;
+  }
+}
+
+.auth {
+  padding: 30px 20px;
+  background: $whiteColor;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 2px solid black;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: -1;
+  animation-name: authClose;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow: hidden;
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .log {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/login.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .pass {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/lock.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .log,
+    .pass {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid black;
+    }
+
+    .login,
+    .login:focus,
+    .password,
+    .password:focus {
+      font-family: $comfortaaRegular;
+      border: none;
+      padding: 5px 5px 5px 0px;
+      margin-left: 30px;
+      outline: none;
+      width: 200px;
+    }
+
+    .authBtn {
+      border: none;
+      background-color: $blackColor;
+      color: $whiteColor;
+      padding: 7px;
+      border-radius: 5px;
+      font-family: $comfortaaRegular;
+      cursor: pointer;
+      position: relative;
+      background-image: linear-gradient($orangeColor, $orangeColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 30px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-size: 100% 30px;
+
+        &::before {
+          transform: translate(230px, -50%);
+        }
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background: url("../assets/svg/arrowLeft.svg") no-repeat;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-50%);
+        transition: all 0.3s;
+      }
+    }
+
+    .regLink {
+      overflow: hidden;
+      align-self: center;
+      margin-top: -15px;
+      color: $blackColor;
+      transition: all 0.3s;
+      cursor: pointer;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 1px;
+      background-color: transparent;
+      font-family: $comfortaaRegular;
+      border: none;
+
+      &:hover {
+        background-size: 100% 1px;
+        color: $orangeColor;
+      }
+    }
+  }
+
+  &.open {
+    animation-name: authOpen;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+  }
+}
+
+.reg {
+  padding: 30px 20px;
+  background: $whiteColor;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: -1;
+  animation-name: authClose;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  overflow: visible;
+
+  .reg-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow: visible;
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .FIO {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/user.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .log {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/login.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .phone {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/phone.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .pass {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/lock.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .FIO,
+    .log,
+    .phone,
+    .pass {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid black;
+    }
+
+    .fio,
+    .fio:focus,
+    .login,
+    .login:focus,
+    .telephone,
+    .telephone:focus,
+    .password,
+    .password:focus {
+      font-family: $comfortaaRegular;
+      border: none;
+      padding: 5px 5px 5px 0px;
+      margin-left: 30px;
+      outline: none;
+      width: 200px;
+    }
+
+    .authBtn,
+    .regBtn {
+      border: none;
+      background-color: $blackColor;
+      color: $whiteColor;
+      padding: 7px;
+      border-radius: 5px;
+      font-family: $comfortaaRegular;
+      cursor: pointer;
+      position: relative;
+      background-image: linear-gradient($orangeColor, $orangeColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 30px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-size: 100% 30px;
+
+        &::before {
+          transform: translate(230px, -50%);
+        }
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background: url("../assets/svg/arrowLeft.svg") no-repeat;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-50%);
+        transition: all 0.3s;
+      }
+    }
+
+    .city,
+    .town {
+      overflow: visible;
+
+      .text {
+        overflow: hidden;
+        font-size: small;
+      }
+    }
+  }
+
+  &.open {
+    animation-name: authOpen;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+  }
+}
+
+.blackBackground {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin-top: -60px;
+  z-index: -1;
+  animation-name: backClose;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+
+  &.open {
+    animation-name: backOpen;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+  }
+}
+
+//------------ABOUT------------
+
+.product{
+
+}
+
+.product-container{
+  @extend %container;
+  flex-direction: column;
+  row-gap: 30px;
+  
+  .topInfo{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    min-width: 0;
+    row-gap: 30px;
+  }
+
+  .mainInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 30px;
+
+    .title{
+      font-size: 30px;
+      font-weight: bold;
+      overflow: hidden;
+    }
+
+    .sellerInfo{
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+      .seller{
+        overflow: hidden;
+        height: 20px;
+        font-weight:600;
+      }
+      .FIO{
+        overflow: hidden;
+      }
+      .phone{
+        overflow: hidden;
+      }
+      .address{
+        overflow: hidden;
+        height: 20px;
+      }
+    }
+  }
+
+  .discriptionText{
+    overflow: hidden;
+    text-indent: 20px;
+  }
+}
+
+
+
+
+
+

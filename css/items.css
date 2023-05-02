@@ -1,0 +1,160 @@
+.items-container {
+  max-width: 1200px;
+  padding: 20px 20px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.items {
+  width: 100%;
+}
+
+.items-container {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.items-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: visible;
+  margin: 0px -10px;
+}
+.items-wrapper .cost {
+  padding: 5px 5px 0px 5px;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: large;
+}
+
+.itemLink {
+  color: #1F1F1F;
+}
+
+.item {
+  min-width: 25%;
+  max-width: 25%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 10px 10px;
+  position: relative;
+}
+.item .item-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.item .item-picture {
+  padding-bottom: 90.84%;
+  position: relative;
+  overflow: hidden;
+}
+.item .item-picture img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.item .item-title {
+  margin-top: 10px;
+  overflow: hidden;
+  padding: 0px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.item .item-title .title {
+  width: 100%;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: large;
+  -webkit-mask-image: -webkit-gradient(linear, center center, right top, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
+}
+.item .item-description {
+  margin-top: 5px;
+  padding: 0px 5px 5px 5px;
+  max-height: 19px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
+  overflow: hidden;
+}
+.item .item-description .description {
+  overflow: hidden;
+  font-weight: lighter;
+  font-size: smaller;
+  color: rgb(38, 38, 38);
+}
+.item .item-open {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px 0;
+}
+.item .item-open .open-item {
+  border: 2px solid black;
+  padding: 5px 15%;
+  border-radius: 7px;
+  font-weight: bold;
+  color: #1F1F1F;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F27800), to(#F27800));
+  background-image: -o-linear-gradient(#F27800, #F27800);
+  background-image: linear-gradient(#F27800, #F27800);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 30px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.item .item-open .open-item:hover {
+  background-size: 100% 30px;
+  color: #FFFFFF;
+}
+.item:hover {
+  scale: 1.1;
+}
+
+.heard {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}

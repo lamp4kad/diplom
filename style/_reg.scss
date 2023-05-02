@@ -1,0 +1,213 @@
+@keyframes regOpen {
+  0% {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+@keyframes regClose {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  99% {
+    z-index: 2;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.reg {
+  padding: 30px 20px;
+  max-height: 100%;
+  background: $whiteColor;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: -1;
+  animation-name: regClose;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  overflow: auto;
+  max-width: 300px;
+
+  .reg-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow: visible;
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .FIO {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/user.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .mail {
+      &::before {
+        content: "@";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        padding-left: 5px;
+      }
+    }
+
+    .log {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/login.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .phone {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/phone.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .pass {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/lock.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .FIO,
+    .log,
+    .mail,
+    .phone,
+    .pass {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid black;
+    }
+
+    .fio,
+    .fio:focus,
+    .email,
+    .email:focus,
+    .login,
+    .login:focus,
+    .telephone,
+    .telephone:focus,
+    .password,
+    .password:focus {
+      font-family: $comfortaaRegular;
+      border: none;
+      padding: 5px 5px 5px 0px;
+      margin-left: 30px;
+      outline: none;
+      width: 200px;
+    }
+
+    .regBtn {
+      border: none;
+      background-color: $blackColor;
+      color: $whiteColor;
+      padding: 7px;
+      border-radius: 5px;
+      font-family: $comfortaaRegular;
+      cursor: pointer;
+      position: relative;
+      background-image: linear-gradient($orangeColor, $orangeColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 30px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-size: 100% 30px;
+
+        &::before {
+          transform: translate(230px, -50%);
+        }
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background: url("../assets/svg/arrowLeft.svg") no-repeat;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-50%);
+        transition: all 0.3s;
+      }
+    }
+
+    .city,
+    .town {
+      overflow: visible;
+
+      .text {
+        overflow: hidden;
+        font-size: small;
+      }
+    }
+  }
+
+  &.open {
+    animation-name: regOpen;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+  }
+}

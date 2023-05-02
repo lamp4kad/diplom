@@ -1,0 +1,148 @@
+.newItem-container {
+  max-width: 1200px;
+  padding: 20px 20px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newItem-container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.newItem-container .title {
+  width: 100%;
+  overflow: hidden;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.newItem-container .newItemForm {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 30px;
+}
+.newItem-container .photos {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.newItem-container .photos .upIMG {
+  display: none;
+}
+.newItem-container .photos .uploadIMG {
+  max-width: 100px;
+  min-width: 100px;
+  width: 100%;
+  padding-bottom: 80px;
+  display: inline-block;
+  background: url("../assets/svg/addPhoto.svg") 0 0 no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.newItem-container .itemData {
+  min-width: 330px;
+  max-width: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+.newItem-container .itemData .addItemBtn {
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "Comfortaa";
+  padding: 5px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F27800), to(#F27800));
+  background-image: -o-linear-gradient(#F27800, #F27800);
+  background-image: linear-gradient(#F27800, #F27800);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 28.4px;
+}
+.newItem-container .itemData .addItemBtn:hover {
+  background-size: 100% 28.4px;
+  color: #FFFFFF;
+}
+.newItem-container .data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.newItem-container .data .title {
+  font-size: 16px;
+  margin-bottom: 0px;
+  text-align: left;
+  font-weight: 600;
+}
+.newItem-container .data .input-container {
+  border-bottom: 2px solid black;
+  padding-left: 30px;
+}
+.newItem-container .data .input-container .itemInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: "Comfortaa";
+  padding: 5px 5px 5px 0px;
+  font-size: 14px;
+}
+.newItem-container .data .input-container .itemPrice::-webkit-outer-spin-button,
+.newItem-container .data .input-container .itemPrice::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.newItem-container .data .textArea-container {
+  border: 2px solid black;
+  min-height: 300px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.newItem-container .data .textArea-container .itemInput {
+  width: 100%;
+  min-height: 300px;
+  border: none;
+  outline: none;
+  font-family: "Comfortaa";
+  padding: 5px 5px 5px 0px;
+  font-size: 14px;
+}

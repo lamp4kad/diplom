@@ -1,0 +1,56 @@
+@import "variables";
+
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 10px;
+
+  .item-remove {
+    font-family: $comfortaaRegular;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    max-width: 150px;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 5px 5px;
+    font-weight: bold;
+    color: $blackColor;
+    background-image: linear-gradient($redColor, $redColor);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 30px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-size: 100% 30px;
+      color: $whiteColor;
+    }
+  }
+
+  .item-change {
+    font-family: $comfortaaRegular;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    max-width: 150px;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 5px 5px;
+    font-weight: bold;
+    color: $blackColor;
+    background-image: linear-gradient($orangeColor, $orangeColor);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 30px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-size: 100% 30px;
+      color: $whiteColor;
+    }
+  }
+}

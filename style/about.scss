@@ -1,0 +1,76 @@
+@import "variables";
+
+.product-container {
+  @extend %container;
+  flex-direction: column;
+  row-gap: 30px;
+  min-width: 0;
+
+  .topInfo {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    min-width: 0;
+    row-gap: 30px;
+  }
+
+  .mainInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 30px;
+    row-gap: 10px;
+
+    .titlePrice {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+    }
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      overflow: hidden;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      overflow: hidden;
+    }
+
+    .sellerInfo {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+
+      .seller {
+        overflow: hidden;
+        height: 20px;
+        font-weight: 600;
+      }
+
+      .FIO {
+        overflow: hidden;
+      }
+
+      .phone {
+        overflow: hidden;
+      }
+
+      .address {
+        overflow: hidden;
+      }
+    }
+  }
+
+  .discription {
+    width: 100%;
+  }
+
+  .discriptionText {
+    overflow: hidden;
+    text-indent: 20px;
+    height: 17px;
+  }
+}

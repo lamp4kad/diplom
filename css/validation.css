@@ -1,0 +1,19 @@
+.invalid {
+  border-color: red !important;
+  color: red !important;
+}
+
+.invalidText {
+  overflow: hidden;
+  color: red !important;
+  font-size: 13px;
+  margin: 5px 0px;
+  max-height: 0px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.invalidText.open {
+  min-height: 14px;
+  max-height: 100px;
+}

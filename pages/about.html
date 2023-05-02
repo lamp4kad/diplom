@@ -5,46 +5,116 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="../css/style.css">
-
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/slider.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <title>About</title>
 </head>
 
 <body>
   <header>
     <div class="header-container">
-      <div class="logo">Logo</div>
-      <button class="signIn">Войти</button>
+      <div class="logo">Freeplate</div>
+      <button class="signIn hoverUnderline">Войти</button>
+      <div class="user hide">
+        <div class="user-container">
+          <button class="userName hoverUnderline">text</button>
+          <div class="userActions">
+            <ul class="actions">
+              <li class="action hoverUnderline">
+                <a href="./addItem.html" class="actionLink addItem">Добавить объявление</a>
+              </li>
+              <li class="action hoverUnderline">
+                <a href="./myItems.html" class="actionLink myItems">Мои объявления</a>
+              </li>
+              <li class="action hoverUnderline">
+                <a href="./favItems.html" class="actionLink favItems">Избранное</a>
+              </li>
+              <li class="action hoverUnderline">
+                <a href="#" class="actionLink exit">Выход</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
   <main>
+    <div class="blackBackground"></div>
+    <div class="auth">
+      <form class="auth-container">
+        <p class="title">Авторизация</p>
+        <div class="log">
+          <span class="invalidText">Проверьте правильность ввода</span>
+          <input type="text" placeholder="Логин" class="login" data-auth-field>
+        </div>
+        <div class="pass">
+          <span class="invalidText">Проверьте правильность ввода</span>
+          <input type="password" placeholder="Пароль" class="password" data-auth-field>
+        </div>
+        <button class="authBtn">Авторизироваться</button>
+        <button class="regLink">Зарегистрироваться</button>
+      </form>
+    </div>
+    <div class="reg">
+      <form class="reg-container">
+        <p class="title">Регистрация</p>
+        <div class="FIO">
+          <span class="invalidText">Введите корректное ФИО</span>
+          <input type="text" placeholder="ФИО" class="fio" data-reg-field data-reg-fio>
+        </div>
+        <div class="log">
+          <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
+          <input type="text" placeholder="Логин" class="login" data-reg-field data-reg-login>
+        </div>
+        <div class="mail">
+          <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
+          <input type="mail" placeholder="Почта" class="email" data-reg-field data-reg-email>
+        </div>
+        <div class="phone">
+          <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
+          <input type="tel" placeholder="Телефон" class="telephone" data-phone-pattern data-reg-field data-reg-phone>
+        </div>
+        <div class="pass">
+          <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
+          <input type="password" placeholder="Пароль" class="password" data-reg-field data-reg-password>
+        </div>
+        <div class="city">
+          <p class="text">Область</p>
+          <div class="select-wrapper">
+            <div class="select" data-reg-city>Брестская обл.
+            </div>
+            <div class="select-menu cities">
+            </div>
+          </div>
+        </div>
+        <div class="town">
+          <p class="text">Город</p>
+          <div class="select-wrapper">
+            <div class="select" data-reg-town>Антополь
+            </div>
+            <div class="select-menu towns">
+            </div>
+          </div>
+        </div>
+        <button class="regBtn">Зарегистрироваться</button>
+      </form>
+    </div>
     <div class="product">
       <div class="product-container">
         <div class="topInfo">
           <div class="swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="img">
-                  <img src="../assets/img/picture.jpg" alt="">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="img">
-                  <img src="../assets/img/picture2.jpg" alt="">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="img swiper-zoom-container">
-                  <img src="../assets/img/picture3.jpg" alt="">
-                </div>
-              </div>
             </div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           </div>
           <div class="mainInfo">
-            <p class="title">Title</p>
+            <div class="titlePrice">
+              <p class="title">Title</p>
+              <p class="price">Title</p>
+            </div>
             <div class="sellerInfo">
               <p class="seller">Информация о продавце</p>
               <p class="FIO">ФИО: <span class="FIOinfo">fio</span></p>
@@ -54,19 +124,9 @@
           </div>
         </div>
         <div class="discription">
-          <p class="discriptionText">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ab ducimus dolore, qui perspiciatis exercitationem dolor illo iste distinctio commodi?
-          </p>
-          <p class="discriptionText">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ab ducimus dolore, qui perspiciatis exercitationem dolor illo iste distinctio commodi?
-          </p>
-          <p class="discriptionText">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nemo voluptatem quidem repellendus quae sapiente, dolore quibusdam unde beatae aperiam minima ea eligendi corrupti dolor perferendis sunt hic pariatur distinctio?  
-          </p>
         </div>
       </div>
     </div>
-    
   </main>
   <footer>
     <div class="footer-container">
@@ -86,9 +146,10 @@
       </div>
     </div>
   </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script src="../js/slider.js"></script>
+  <script src="../js/script.js" type="module"></script>
+  <script src="../js/about.js" type="module"></script>
+
 </body>
 
 </html>

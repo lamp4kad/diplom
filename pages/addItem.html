@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main</title>
-  <link rel="stylesheet" href="../css/index.css">
-  <link rel="stylesheet" href="../css/items.css">
+  <title>Add</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../css/add.css">
+  <link rel="stylesheet" href="../css/slider.css">
+  <link rel="stylesheet" href="../css/loader.css">
   <link rel="stylesheet" href="../css/main.css">
 </head>
 
@@ -100,38 +102,56 @@
         <button class="regBtn">Зарегистрироваться</button>
       </form>
     </div>
-    <div class="filters">
-      <div class="filters-container">
-        <!--<div class="select-wrapper">
-          <div class="select">Всё
-          </div>
-          <div class="select-menu">
-            <div class="select-item">Товары</div>
-            <div class="select-item">Работа</div>
-          </div>
-        </div>-->
-
-        <div class="price-wrapper min">
-          <input type="number" class="minPrice" placeholder="Минимальная цена" min="0">
-        </div>
-
-        <div class="price-wrapper max">
-          <input type="number" class="maxPrice" placeholder="Максимальная цена" min="0">
-        </div>
-
-        <div class="search-wrapper">
-          <input type="text" class="search" placeholder="Название">
-        </div>
-
-        <button class="asseptBtn">Применить</button>
-        <button class="clearBtn">Отменить</button>
+    <div class="loaderBackground">
+      <div class="loader">
+        <div class="loaderOutCircle"></div>
+        <div class="loaderInCircle"></div>
+        <div class="around"></div>
       </div>
     </div>
-    <div class="items">
-      <div class="items-container">
-        <div class="items-wrapper">
-        </div>
+    <div class="newItem">
+      <div class="newItem-container">
+        <p class="title">Новое объявление</p>
+        <form class="newItemForm">
+          <div class="photos">
+            <input type="file" class="upIMG" id="forImg" accept="image/png, image/jpeg">
+            <label for="forImg" class="uploadIMG">
+            </label>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="itemData">
+            <div class="data">
+              <label class="title" for="itemTitle">Название</label>
+              <div class="input-container">
+                <input type="text" class="itemTitle itemInput" id="itemTitle" placeholder="Введите текст" data-add-item>
+              </div>
+              <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
+            </div>
+            <div class="data">
+              <label class="title" for="itemPrice">Цена</label>
+              <div class="input-container">
+                <input type="number" class="itemPrice itemInput" id="itemPrice" placeholder="Введите текст"
+                  data-add-item>
+              </div>
+              <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
+            </div>
+            <div class="data">
+              <label class="title" for="itemDescription">Описание</label>
+              <div class="textArea-container">
+                <textarea type="" class="itemDescription itemInput" id="itemDescription" placeholder="Введите текст">
+
+                </textarea>
+              </div>
+            </div>
+            <button class="addItemBtn">Разместить объявление</button>
+          </div>
       </div>
+    </div>
     </div>
   </main>
   <footer>
@@ -152,10 +172,11 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="../js/script.js" type="module"></script>
-  <script src="../js/cities.js" type="module"></script>
-  <script src="../js/items.js" type="module"></script>
-  <script src="../js/filters.js" type="module"></script>
+  <script src="../js/slider.js" type="module"></script>
+  <script src="../js/upload.js" type="module"></script>
+  <script src="../js/addItem.js" type="module"></script>
 </body>
 
 </html>

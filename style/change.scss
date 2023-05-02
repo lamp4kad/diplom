@@ -1,0 +1,127 @@
+@import "variables";
+
+.newItem-container {
+  @extend %container;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .title {
+    width: 100%;
+    overflow: hidden;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .newItemForm {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
+
+  .photos {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .upIMG {
+      display: none;
+    }
+
+    .uploadIMG {
+      max-width: 100px;
+      min-width: 100px;
+      width: 100%;
+      padding-bottom: 80px;
+      display: inline-block;
+      background: url("../assets/svg/addPhoto.svg") 0 0 no-repeat;
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  }
+
+  .itemData {
+    min-width: 330px;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    .changeItemBtn {
+      border: 2px solid black;
+      border-radius: 5px;
+      font-family: $comfortaaRegular;
+      padding: 5px;
+      background-color: $whiteColor;
+      cursor: pointer;
+      transition: all 0.3s;
+      background-image: linear-gradient($orangeColor, $orangeColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 28.4px;
+
+      &:hover {
+        background-size: 100% 28.4px;
+        color: $whiteColor;
+      }
+    }
+  }
+
+  .data {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 16px;
+      margin-bottom: 0px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .input-container {
+      border-bottom: 2px solid black;
+      padding-left: 30px;
+
+      .itemInput {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-family: $comfortaaRegular;
+        padding: 5px 5px 5px 0px;
+        font-size: 14px;
+      }
+
+      .itemPrice::-webkit-outer-spin-button,
+      .itemPrice::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+    }
+
+    .textArea-container {
+      border: 2px solid black;
+      min-height: 300px;
+      border-radius: 5px;
+      padding: 5px;
+
+
+      .itemInput {
+        width: 100%;
+        min-height: 300px;
+        border: none;
+        outline: none;
+        font-family: $comfortaaRegular;
+        padding: 5px 5px 5px 0px;
+        font-size: 14px;
+      }
+    }
+  }
+}

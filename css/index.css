@@ -1,0 +1,154 @@
+.filters-container {
+  max-width: 1200px;
+  padding: 20px 20px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html.overflowHidden {
+  overflow: hidden;
+}
+
+.filters {
+  width: 100%;
+  overflow: visible;
+}
+
+.filters-container {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: transparent;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  overflow: visible;
+}
+
+.minPrice,
+.minPrice:focus,
+.maxPrice,
+.maxPrice:focus,
+.search,
+.search:focus {
+  font-family: "Comfortaa";
+  border: none;
+  padding: 5px 5px 5px 0px;
+  margin-left: 30px;
+  outline: none;
+  max-width: 100%;
+}
+
+.search,
+.search:focus {
+  width: 100%;
+  max-width: 670px;
+}
+
+.price-wrapper {
+  border-bottom: 2px solid black;
+  position: relative;
+  min-width: 200px;
+}
+.price-wrapper.min::after {
+  display: block;
+  position: absolute;
+  top: 14px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 3px;
+  content: "";
+  background: url("../assets/svg/minCoins.svg");
+  width: 20px;
+  height: 20px;
+}
+.price-wrapper.max::after {
+  display: block;
+  position: absolute;
+  top: 14px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 3px;
+  content: "";
+  background: url("../assets/svg/maxCoins.svg");
+  width: 20px;
+  height: 20px;
+}
+
+.search-wrapper {
+  position: relative;
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+.search-wrapper::after {
+  display: block;
+  position: absolute;
+  top: 14px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 3px;
+  content: "";
+  background: url("../assets/svg/search.svg");
+  width: 20px;
+  height: 20px;
+}
+
+.minPrice::-webkit-outer-spin-button,
+.minPrice::-webkit-inner-spin-button,
+.maxPrice::-webkit-outer-spin-button,
+.maxPrice::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.asseptBtn {
+  padding: 7px;
+  color: #FFFFFF;
+  font-family: "Comfortaa";
+  background-color: #1F1F1F;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F27800), to(#F27800));
+  background-image: -o-linear-gradient(#F27800, #F27800);
+  background-image: linear-gradient(#F27800, #F27800);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 30px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.asseptBtn:hover {
+  background-size: 100% 30px;
+}
+
+.clearBtn {
+  padding: 7px;
+  color: #FFFFFF;
+  font-family: "Comfortaa";
+  background-color: #1F1F1F;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f23000), to(#f23000));
+  background-image: -o-linear-gradient(#f23000, #f23000);
+  background-image: linear-gradient(#f23000, #f23000);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 30px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.clearBtn:hover {
+  background-size: 100% 30px;
+}

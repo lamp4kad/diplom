@@ -1,4 +1,5 @@
+import './authByLocalStorage.js';
 import './auth.js';
-import './cities.js';
+import './userActions.js';
 import './select.js';
 import './phone.js';

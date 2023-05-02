@@ -1,5 +1,8 @@
+@import "variables";
+
 .swiper {
-  width: 600px;
+  width: 100%;
+  max-width: 580px;
   height: 300px;
   margin-right: 0px !important;
   margin-left: 0px;
@@ -7,7 +10,7 @@
   .swiper-wrapper {
     overflow-x: visible;
   }
-
+  
   .img {
     text-align: center;
     height: 100%;

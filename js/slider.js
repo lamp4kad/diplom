@@ -1,10 +1,11 @@
-const swiper = new Swiper('.swiper', {
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-
-  grabCursor: true,
-
-  loop: true,
-});
+export function initSlider(el){
+  const swiper = new Swiper(`.swiper`, {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    observeSlideChildren: true,
+    grabCursor: true,
+    loop: true,
+  });
+}

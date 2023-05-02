@@ -2,8 +2,31 @@
   .swiper {
     height: 250px;
   }
-  .topInfo{
+
+  .topInfo {
     justify-content: space-around;
+  }
+
+  .newItem-container {
+    .newItemForm {
+      justify-content: space-around;
+    }
+  }
+
+  .my{
+    .item{
+
+      .item-wrapper{
+        flex-wrap: wrap;
+        position: relative;
+      }
+
+      .buttons{
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+      }
+    }
   }
 }
 

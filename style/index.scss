@@ -1,0 +1,146 @@
+@import "variables";
+
+html {
+  &.overflowHidden {
+    overflow: hidden;
+  }
+}
+
+.filters {
+  width: 100%;
+  overflow: visible;
+}
+
+.filters-container {
+  @extend %container;
+  align-items: flex-start;
+  background-color: transparent;
+  column-gap: 20px;
+  overflow: visible;
+}
+
+.minPrice,
+.minPrice:focus,
+.maxPrice,
+.maxPrice:focus,
+.search,
+.search:focus {
+  font-family: $comfortaaRegular;
+  border: none;
+  padding: 5px 5px 5px 0px;
+  margin-left: 30px;
+  outline: none;
+  max-width: 100%;
+}
+
+.search,
+.search:focus {
+  width: 100%;
+  max-width: 670px;
+}
+
+.price-wrapper {
+  border-bottom: 2px solid black;
+  position: relative;
+  min-width: 200px;
+
+  &.min {
+    &::after {
+      display: block;
+      position: absolute;
+      top: 14px;
+      transform: translateY(-50%);
+      left: 3px;
+      content: "";
+      background: url("../assets/svg/minCoins.svg");
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.max {
+    &::after {
+      display: block;
+      position: absolute;
+      top: 14px;
+      transform: translateY(-50%);
+      left: 3px;
+      content: "";
+      background: url("../assets/svg/maxCoins.svg");
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+}
+
+.search-wrapper {
+  position: relative;
+  border-bottom: 2px solid black;
+  width: 100%;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 14px;
+    transform: translateY(-50%);
+    left: 3px;
+    content: "";
+    background: url("../assets/svg/search.svg");
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.minPrice::-webkit-outer-spin-button,
+.minPrice::-webkit-inner-spin-button,
+.maxPrice::-webkit-outer-spin-button,
+.maxPrice::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.asseptBtn {
+  padding: 7px;
+  color: $whiteColor;
+  font-family: $comfortaaRegular;
+  background-color: $blackColor;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-image: linear-gradient($orangeColor, $orangeColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 30px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-size: 100% 30px;
+  }
+}
+
+.clearBtn {
+  padding: 7px;
+  color: $whiteColor;
+  font-family: $comfortaaRegular;
+  background-color: $blackColor;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-image: linear-gradient($redColor, $redColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 30px;
+  transition: all 0.3s;
+
+  &:hover {
+    background-size: 100% 30px;
+  }
+}
+//------------ABOUT------------
+
+//------------NEW ITEM------------
+
+//------------MY ITEMS------------
+
+//------------CHANGE------------

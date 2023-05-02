@@ -8,28 +8,103 @@ header {
 .header-container {
   @extend %container;
   justify-content: space-between;
+  overflow: visible;
 }
 
 .logo {
   color: $whiteColor;
+  font-family: $comfortaaRegular;
   overflow: hidden;
   height: 20px;
 }
 
-.signIn {
+.hoverUnderline{
+  transition: all 0.3s;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+
+  &:hover {
+    background-size: 100% 2px;
+    color: $orangeColor;
+  }
+}
+
+.signIn,
+.userName {
   background-color: transparent;
   border: none;
   color: $whiteColor;
   font-family: $comfortaaRegular;
   transition: all 0.3s;
   cursor: pointer;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 1px;
+  font-size: 14px;
 
-  &:hover {
-    background-size: 100% 1px;
-    color: $orangeColor;
+  &.hide{
+    display: none;
+  }
+
+}
+
+.user {
+  overflow: visible;
+
+  .user-container {
+    overflow: visible;
+    position: relative;
+    text-align: right;
+
+    .userName {
+      display: inline-block;
+      text-align: right;
+      overflow: hidden;
+      padding: 0;
+      
+    }
+  }
+
+  &.hide{
+    display: none;
+  }
+}
+
+.userActions {
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  min-width: 221px;
+  bottom: -35px;
+  max-height: 30px;
+  max-width: 100%;
+  overflow: visible;
+  opacity: 0;
+  transition: all 0.3s;
+
+  &.open {
+    z-index: 3;
+    opacity: 1;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid $whiteColor;
+    overflow: hidden;
+    background-color: $blackColor;
+
+    .action {
+      overflow: visible;
+
+      .actionLink {
+        padding: 5px;
+        font-family: $comfortaaRegular;
+        color: $whiteColor;
+      }
+    }
   }
 }

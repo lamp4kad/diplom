@@ -3,6 +3,15 @@ import { getUserByID, getItemByID, setFavoritesByID } from "./firebase.js";
 const itemsWrapper = document.querySelector(".items-wrapper")
 let User = JSON.parse(localStorage.getItem("user"))
 
+if (User.id !== "") {
+  document.querySelector(".signIn").classList.add("hide");
+  document.querySelector(".user").classList.remove("hide");
+  document.querySelector(".userName").innerHTML = User.fio
+}
+else {
+  location.replace("../pages/index.html");
+}
+
 getUserByID(User.id).then(user => {
   let favorite = user.favorites
   favorite.forEach(favItem => {

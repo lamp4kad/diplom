@@ -29,8 +29,6 @@ getItemByID(JSON.parse(localStorage.getItem("id"))).then(item => {
 
 changeItemBtn.addEventListener("click", changeItem);
 
-
-
 let inputs = [title, price, description]
 
 price.addEventListener("keypress", function (evt) {

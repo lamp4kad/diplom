@@ -3,6 +3,15 @@ import { getItems, deleteItemById } from "./firebase.js";
 const itemsWrapper = document.querySelector(".items-wrapper")
 const user = JSON.parse(localStorage.getItem("user"))
 
+if (user.id !== "") {
+  document.querySelector(".signIn").classList.add("hide");
+  document.querySelector(".user").classList.remove("hide");
+  document.querySelector(".userName").innerHTML = user.fio
+}
+else {
+  location.replace("../pages/index.html");
+}
+
 getItems().then(items => {
   items.forEach(item => {
     if (item.author == user.id) {

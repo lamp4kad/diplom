@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/reg.css">
+  <link rel="stylesheet" href="../css/blackBackground.css">
   <link rel="stylesheet" href="../css/slider.css">
   <link rel="stylesheet" href="../css/main.css">
   <title>About</title>
@@ -15,7 +18,7 @@
 <body>
   <header>
     <div class="header-container">
-      <div class="logo">Freeplate</div>
+      <a href="../pages/index.html" class="logo">Freeplate</a>
       <button class="signIn hoverUnderline">Войти</button>
       <div class="user hide">
         <div class="user-container">
@@ -30,6 +33,9 @@
               </li>
               <li class="action hoverUnderline">
                 <a href="./favItems.html" class="actionLink favItems">Избранное</a>
+              </li>
+              <li class="action hoverUnderline">
+                <a href="./userSettings.html" class="actionLink userSettings">Настройки профиля</a>
               </li>
               <li class="action hoverUnderline">
                 <a href="#" class="actionLink exit">Выход</a>
@@ -148,6 +154,8 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="../js/script.js" type="module"></script>
+  <script src="../js/auth.js" type="module"></script>
+  <script src="../js/cities.js" type="module"></script>
   <script src="../js/about.js" type="module"></script>
 
 </body>

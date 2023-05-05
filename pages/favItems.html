@@ -13,7 +13,7 @@
 <body>
   <header>
     <div class="header-container">
-      <div class="logo">Freeplate</div>
+      <a href="../pages/index.html" class="logo">Freeplate</a>
       <button class="signIn hoverUnderline">Войти</button>
       <div class="user hide">
         <div class="user-container">
@@ -30,6 +30,9 @@
                 <a href="./favItems.html" class="actionLink favItems">Избранное</a>
               </li>
               <li class="action hoverUnderline">
+                <a href="./userSettings.html" class="actionLink userSettings">Настройки профиля</a>
+              </li>
+              <li class="action hoverUnderline">
                 <a href="#" class="actionLink exit">Выход</a>
               </li>
             </ul>
@@ -39,66 +42,6 @@
     </div>
   </header>
   <main>
-    <div class="blackBackground"></div>
-    <div class="auth">
-      <form class="auth-container">
-        <p class="title">Авторизация</p>
-        <div class="log">
-          <span class="invalidText">Проверьте правильность ввода</span>
-          <input type="text" placeholder="Логин" class="login" data-auth-field>
-        </div>
-        <div class="pass">
-          <span class="invalidText">Проверьте правильность ввода</span>
-          <input type="password" placeholder="Пароль" class="password" data-auth-field>
-        </div>
-        <button class="authBtn">Авторизироваться</button>
-        <button class="regLink">Зарегистрироваться</button>
-      </form>
-    </div>
-    <div class="reg">
-      <form class="reg-container">
-        <p class="title">Регистрация</p>
-        <div class="FIO">
-          <span class="invalidText">Введите корректное ФИО</span>
-          <input type="text" placeholder="ФИО" class="fio" data-reg-field data-reg-fio>
-        </div>
-        <div class="log">
-          <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
-          <input type="text" placeholder="Логин" class="login" data-reg-field data-reg-login>
-        </div>
-        <div class="mail">
-          <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
-          <input type="mail" placeholder="Почта" class="email" data-reg-field data-reg-email>
-        </div>
-        <div class="phone">
-          <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
-          <input type="tel" placeholder="Телефон" class="telephone" data-phone-pattern data-reg-field data-reg-phone>
-        </div>
-        <div class="pass">
-          <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
-          <input type="password" placeholder="Пароль" class="password" data-reg-field data-reg-password>
-        </div>
-        <div class="city">
-          <p class="text">Область</p>
-          <div class="select-wrapper">
-            <div class="select" data-reg-city>Брестская обл.
-            </div>
-            <div class="select-menu cities">
-            </div>
-          </div>
-        </div>
-        <div class="town">
-          <p class="text">Город</p>
-          <div class="select-wrapper">
-            <div class="select" data-reg-town>Антополь
-            </div>
-            <div class="select-menu towns">
-            </div>
-          </div>
-        </div>
-        <button class="regBtn">Зарегистрироваться</button>
-      </form>
-    </div>
     <div class="items">
       <div class="items-container">
         <div class="items-wrapper">

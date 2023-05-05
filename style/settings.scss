@@ -1,0 +1,191 @@
+@import "variables";
+
+.settings {
+  overflow: visible;
+}
+
+.settings-container {
+  @extend %container;
+  flex-direction: column;
+  overflow: visible;
+  align-items: flex-start;
+  height: 100%;
+
+  .title {
+    align-self: center;
+    font-size: 30px;
+    font-weight: bold;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .changeUserSettings {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    overflow: visible;
+    column-gap: 30px;
+  }
+
+  .warning {
+    min-width: 300px;
+
+    .warningText {
+      padding-top: 20px;
+      text-align: right;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 25px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      color: $orangeColor;
+
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .data {
+    display: flex;
+    align-items: flex-start;
+    row-gap: 20px;
+    flex-direction: column;
+    width: 100%;
+    overflow: visible;
+    max-width: 500px;
+
+    .FIO {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/user.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .mail {
+      &::before {
+        content: "@";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        padding-left: 5px;
+      }
+    }
+
+    .log {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/login.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .phone {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/phone.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .pass {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/lock.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .FIO,
+    .log,
+    .mail,
+    .phone,
+    .pass {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid black;
+    }
+
+    .fio,
+    .fio:focus,
+    .email,
+    .email:focus,
+    .login,
+    .login:focus,
+    .telephone,
+    .telephone:focus,
+    .password,
+    .password:focus {
+      font-family: $comfortaaRegular;
+      border: none;
+      padding: 5px 5px 5px 0px;
+      margin-left: 30px;
+      outline: none;
+      width: 200px;
+    }
+
+    .city,
+    .town {
+      width: 100%;
+      max-width: 500px;
+      overflow: visible;
+
+      .text {
+        overflow: hidden;
+        font-size: small;
+      }
+    }
+  }
+
+  .changeUserSettingsBtn {
+    margin-top: 10px;
+    padding: 7px;
+    color: $whiteColor;
+    font-family: $comfortaaRegular;
+    background-color: $blackColor;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: linear-gradient($orangeColor, $orangeColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 30px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-size: 100% 30px;
+    }
+  }
+}

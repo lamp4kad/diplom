@@ -97,6 +97,11 @@ export async function updateItemByID(links, ID) {
   });
 }
 
+export async function updateUserByID(ID, data){
+  const userRef = doc(db, "users", `${ID}`);
+  await updateDoc(userRef, data);
+}
+
 export async function deleteItemById(ID) {
   await deleteDoc(doc(db, "items", `${ID}`));
 }

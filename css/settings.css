@@ -1,0 +1,202 @@
+.settings-container {
+  max-width: 1200px;
+  padding: 20px 20px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.settings {
+  overflow: visible;
+}
+
+.settings-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: visible;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100%;
+}
+.settings-container .title {
+  -ms-flex-item-align: center;
+      align-self: center;
+  font-size: 30px;
+  font-weight: bold;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.settings-container .changeUserSettings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: visible;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+.settings-container .warning {
+  min-width: 300px;
+}
+.settings-container .warning .warningText {
+  padding-top: 20px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 25px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  color: #F27800;
+}
+.settings-container .warning .warningText span {
+  text-decoration: underline;
+}
+.settings-container .data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  overflow: visible;
+  max-width: 500px;
+}
+.settings-container .data .FIO::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: url("../assets/svg/user.svg") no-repeat;
+  background-size: cover;
+}
+.settings-container .data .mail::before {
+  content: "@";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  padding-left: 5px;
+}
+.settings-container .data .log::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: url("../assets/svg/login.svg") no-repeat;
+  background-size: cover;
+}
+.settings-container .data .phone::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: url("../assets/svg/phone.svg") no-repeat;
+  background-size: cover;
+}
+.settings-container .data .pass::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: url("../assets/svg/lock.svg") no-repeat;
+  background-size: cover;
+}
+.settings-container .data .FIO,
+.settings-container .data .log,
+.settings-container .data .mail,
+.settings-container .data .phone,
+.settings-container .data .pass {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid black;
+}
+.settings-container .data .fio,
+.settings-container .data .fio:focus,
+.settings-container .data .email,
+.settings-container .data .email:focus,
+.settings-container .data .login,
+.settings-container .data .login:focus,
+.settings-container .data .telephone,
+.settings-container .data .telephone:focus,
+.settings-container .data .password,
+.settings-container .data .password:focus {
+  font-family: "Comfortaa";
+  border: none;
+  padding: 5px 5px 5px 0px;
+  margin-left: 30px;
+  outline: none;
+  width: 200px;
+}
+.settings-container .data .city,
+.settings-container .data .town {
+  width: 100%;
+  max-width: 500px;
+  overflow: visible;
+}
+.settings-container .data .city .text,
+.settings-container .data .town .text {
+  overflow: hidden;
+  font-size: small;
+}
+.settings-container .changeUserSettingsBtn {
+  margin-top: 10px;
+  padding: 7px;
+  color: #FFFFFF;
+  font-family: "Comfortaa";
+  background-color: #1F1F1F;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F27800), to(#F27800));
+  background-image: -o-linear-gradient(#F27800, #F27800);
+  background-image: linear-gradient(#F27800, #F27800);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 30px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.settings-container .changeUserSettingsBtn:hover {
+  background-size: 100% 30px;
+}

@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Main</title>
   <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="stylesheet" href="../css/reg.css">
+  <link rel="stylesheet" href="../css/blackBackground.css">
   <link rel="stylesheet" href="../css/items.css">
   <link rel="stylesheet" href="../css/main.css">
 </head>
@@ -14,7 +17,7 @@
 <body>
   <header>
     <div class="header-container">
-      <div class="logo">Freeplate</div>
+      <a href="../pages/index.html" class="logo">Freeplate</a>
       <button class="signIn hoverUnderline">Войти</button>
       <div class="user hide">
         <div class="user-container">
@@ -29,6 +32,9 @@
               </li>
               <li class="action hoverUnderline">
                 <a href="./favItems.html" class="actionLink favItems">Избранное</a>
+              </li>
+              <li class="action hoverUnderline">
+                <a href="./userSettings.html" class="actionLink userSettings">Настройки профиля</a>
               </li>
               <li class="action hoverUnderline">
                 <a href="#" class="actionLink exit">Выход</a>
@@ -153,6 +159,7 @@
     </div>
   </footer>
   <script src="../js/script.js" type="module"></script>
+  <script src="../js/auth.js" type="module"></script>
   <script src="../js/cities.js" type="module"></script>
   <script src="../js/items.js" type="module"></script>
   <script src="../js/filters.js" type="module"></script>

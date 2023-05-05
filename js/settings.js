@@ -58,12 +58,11 @@ function changeData(e) {
     }
     counter++;
   }
-  if(validateData.length > 0){
+  if (validateData.length > 0) {
     validate(validateData).then(res => {
       if (res) {
         console.log(newData)
-        //setUser(data)
-        updateUserByID(user.id, newData)
+        updateUserByID(user.id, newData).then(res => location.replace("../pages/index.html"))
       }
     })
   }

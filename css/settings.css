@@ -165,7 +165,8 @@
   padding: 5px 5px 5px 0px;
   margin-left: 30px;
   outline: none;
-  width: 200px;
+  width: 100%;
+  max-width: 470px;
 }
 .settings-container .data .city,
 .settings-container .data .town {

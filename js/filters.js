@@ -38,14 +38,14 @@ function search() {
     let res = items
     if (minPrice.value != "") {
       res = res.filter(item => {
-        if (+item.price > +minPrice.value) {
+        if (+item.price >= +minPrice.value) {
           return true
         }
       })
     }
     if (maxPrice.value != "") {
       res = res.filter(item => {
-        if (+item.price < +maxPrice.value) {
+        if (+item.price <= +maxPrice.value) {
           return true
         }
       })

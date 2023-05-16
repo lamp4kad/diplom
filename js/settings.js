@@ -62,7 +62,7 @@ function changeData(e) {
     validate(validateData).then(res => {
       if (res) {
         console.log(newData)
-        updateUserByID(user.id, newData).then(res => location.replace("../pages/index.html"))
+        updateUserByID(user.id, newData).then(res => localStorage.setItem("user", JSON.stringify({ login: login.value.trim(), id: user.id, fio: fio.value.trim() }))).then(res => location.replace("../pages/index.html"))
       }
     })
   }

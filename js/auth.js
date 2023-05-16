@@ -106,4 +106,3 @@ function closeBackground(e) {
   })
   document.querySelector("html").classList.toggle("overflowHidden");
 }
-

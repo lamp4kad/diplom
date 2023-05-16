@@ -39,4 +39,3 @@ getItemByID(id).then(item => {
     addressInfo.innerHTML = `${user.city},${user.town}`
   })
 })
-

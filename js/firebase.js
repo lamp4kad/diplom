@@ -1,6 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js';
 import { getStorage, ref, getDownloadURL, uploadBytesResumable } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js';
-import { getFirestore, collection, getDocs, getDoc, addDoc, doc, updateDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore-lite.js';
+import { getFirestore, collection, getDocs, getDoc, addDoc, doc, updateDoc, deleteDoc, query, orderBy} from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore-lite.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBJbWW8b12uV3qYlQgMuwPzkT6ogLtOZwY",
@@ -32,12 +32,12 @@ export async function getUsers() {
 
 export async function getItems() {
   const itemsCol = collection(db, 'items');
-  const itemsSnapshot = await getDocs(itemsCol);
+  const itemsSnapshot = await getDocs(query(itemsCol, orderBy("date")));
   const itemsList = itemsSnapshot.docs.map(doc => {
     let obj = doc.data()
     obj.id = doc.id;
     return obj
-  });
+  }).reverse();
   return itemsList;
 }
 
@@ -97,7 +97,7 @@ export async function updateItemByID(links, ID) {
   });
 }
 
-export async function updateUserByID(ID, data){
+export async function updateUserByID(ID, data) {
   const userRef = doc(db, "users", `${ID}`);
   await updateDoc(userRef, data);
 }

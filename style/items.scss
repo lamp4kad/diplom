@@ -70,6 +70,7 @@
     flex-wrap: wrap;
 
     .title {
+      max-height: 18px;
       width: 100%;
       overflow: hidden;
       font-weight: bold;
@@ -88,6 +89,7 @@
     overflow: hidden;
 
     .description {
+      min-height: 20px;
       overflow: hidden;
       font-weight: lighter;
       font-size: smaller;

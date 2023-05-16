@@ -34,10 +34,14 @@ function addItem(e) {
   e.preventDefault()
   validate(inputs).then(res => {
     if (res) {
+      let options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+      let date = new Date();
+
       let data = {
         title: title.value.trim(),
         price: price.value.trim(),
         description: description.value.trim(),
+        date: date.toLocaleDateString("ru", options),
         author: user.id
       }
       loader.classList.add("open");

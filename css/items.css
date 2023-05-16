@@ -97,6 +97,7 @@
       flex-wrap: wrap;
 }
 .item .item-title .title {
+  max-height: 18px;
   width: 100%;
   overflow: hidden;
   font-weight: bold;
@@ -111,6 +112,7 @@
   overflow: hidden;
 }
 .item .item-description .description {
+  min-height: 20px;
   overflow: hidden;
   font-weight: lighter;
   font-size: smaller;

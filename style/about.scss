@@ -31,6 +31,7 @@
       font-size: 30px;
       font-weight: bold;
       overflow: hidden;
+      max-width: 500px;
     }
 
     .price {
@@ -71,6 +72,6 @@
   .discriptionText {
     overflow: hidden;
     text-indent: 20px;
-    height: 17px;
+    min-height: 17px;
   }
 }

@@ -103,7 +103,10 @@ header {
       overflow: visible;
 
       .actionLink {
-        padding: 5px;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
         font-family: $comfortaaRegular;
         color: $whiteColor;
       }

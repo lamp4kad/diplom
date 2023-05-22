@@ -231,7 +231,10 @@ header {
   overflow: visible;
 }
 .userActions .actions .action .actionLink {
-  padding: 5px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
   font-family: "Comfortaa";
   color: #FFFFFF;
 }

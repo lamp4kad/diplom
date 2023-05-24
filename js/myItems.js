@@ -1,4 +1,4 @@
-import { getItems, deleteItemById } from "./firebase.js";
+import { getAllItems, deleteItemById } from "./firebase.js";
 
 const itemsWrapper = document.querySelector(".items-wrapper")
 const user = JSON.parse(localStorage.getItem("user"))
@@ -12,7 +12,7 @@ else {
   location.replace("../pages/index.html");
 }
 
-getItems().then(items => {
+getAllItems().then(items => {
   items.forEach(item => {
     if (item.author == user.id) {
       let div = document.createElement("div")

@@ -14,10 +14,17 @@ else {
 
 getUserByID(User.id).then(user => {
   let favorite = user.favorites
-  favorite.forEach(favItem => {
+  favorite.forEach((favItem,index) => {
     getItemByID(favItem).then(item => {
       let div = document.createElement("div")
       div.classList.add("item")
+      if(typeof item === 'undefined'){
+        favorite.splice(index,1)
+        setFavoritesByID(favorite, User.id)
+        console.log(index)
+        return
+      }
+      
       div.innerHTML += `
         <div class="item-wrapper">
           <a href="./about.html" class="itemLink" data-id="${favItem}">
@@ -87,11 +94,11 @@ getUserByID(User.id).then(user => {
                 e.target.closest(".item").style.display = "none"
               },
               300
-            ) 
+            )
           })
         })
       }
-      
+
       itemsWrapper.appendChild(div);
     })
   })

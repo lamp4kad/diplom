@@ -42,6 +42,7 @@ function addItem(e) {
         price: price.value.trim(),
         description: description.value.trim(),
         date: date.toLocaleDateString("ru", options),
+        sortMark: -date.getTime(),
         author: user.id
       }
       loader.classList.add("open");

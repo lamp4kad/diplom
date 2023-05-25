@@ -1,61 +1,59 @@
-@keyframes regOpen {
-  0% {
-    opacity: 0;
-    z-index: 2;
-  }
+@import "variables";
 
-  100% {
-    opacity: 1;
-    z-index: 2;
-  }
+.settings {
+  overflow: visible;
 }
 
-@keyframes regClose {
-  0% {
-    opacity: 1;
-    z-index: 2;
+.settings-container {
+  @extend %container;
+  flex-direction: column;
+  overflow: visible;
+  align-items: flex-start;
+  height: 100%;
+
+  .title {
+    align-self: center;
+    font-size: 30px;
+    font-weight: bold;
+    overflow: hidden;
+    margin-bottom: 10px;
   }
 
-  99% {
-    z-index: 2;
-  }
-
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-
-.reg {
-  padding: 30px 20px;
-  max-height: 100%;
-  background: $whiteColor;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid black;
-  border-radius: 10px;
-  opacity: 0;
-  z-index: -1;
-  animation-name: regClose;
-  animation-duration: 0.3s;
-  animation-fill-mode: both;
-  overflow: auto;
-  max-width: 300px;
-
-  .reg-container {
+  .changeUserSettings {
     display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+    width: 100%;
+    justify-content: space-between;
     overflow: visible;
+    column-gap: 30px;
+  }
 
-    .title {
-      font-size: 30px;
+  .warning {
+    min-width: 300px;
+
+    .warningText {
+      padding-top: 20px;
+      text-align: right;
+      font-size: 16px;
       font-weight: bold;
+      line-height: 25px;
       overflow: hidden;
       margin-bottom: 10px;
+      color: $orangeColor;
+
+      span {
+        text-decoration: underline;
+      }
     }
+  }
+
+  .data {
+    display: flex;
+    align-items: flex-start;
+    row-gap: 20px;
+    flex-direction: column;
+    width: 100%;
+    overflow: visible;
+    max-width: 500px;
 
     .FIO {
       &::before {
@@ -132,6 +130,7 @@
     .mail,
     .phone,
     .pass {
+      width: 100%;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -154,48 +153,14 @@
       padding: 5px 5px 5px 0px;
       margin-left: 30px;
       outline: none;
-      width: 200px;
-    }
-
-    .regBtn {
-      border: none;
-      background-color: $blackColor;
-      color: $whiteColor;
-      padding: 7px;
-      border-radius: 5px;
-      font-family: $comfortaaRegular;
-      cursor: pointer;
-      position: relative;
-      background-image: linear-gradient($orangeColor, $orangeColor);
-      background-position: 0% 100%;
-      background-repeat: no-repeat;
-      background-size: 0% 30px;
-      transition: all 0.3s;
-
-      &:hover {
-        background-size: 100% 30px;
-
-        &::before {
-          transform: translate(230px, -50%);
-        }
-      }
-
-      &::before {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        height: 20px;
-        width: 20px;
-        background: url("../assets/svg/arrowLeft.svg") no-repeat;
-        top: 50%;
-        left: 0px;
-        transform: translateY(-50%);
-        transition: all 0.3s;
-      }
+      width: 100%;
+      max-width: 470px;
     }
 
     .city,
     .town {
+      width: 100%;
+      max-width: 500px;
       overflow: visible;
 
       .text {
@@ -205,9 +170,23 @@
     }
   }
 
-  &.open {
-    animation-name: regOpen;
-    animation-duration: 0.3s;
-    animation-fill-mode: both;
+  .changeUserSettingsBtn {
+    margin-top: 10px;
+    padding: 7px;
+    color: $whiteColor;
+    font-family: $comfortaaRegular;
+    background-color: $blackColor;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: linear-gradient($orangeColor, $orangeColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 30px;
+    transition: all 0.3s;
+
+    &:hover {
+      background-size: 100% 30px;
+    }
   }
 }

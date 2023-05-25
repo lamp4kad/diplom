@@ -1,6 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js';
 import { getStorage, ref, getDownloadURL, uploadBytesResumable } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js';
-import { getFirestore, collection, getDocs, getDoc, addDoc, doc, updateDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore-lite.js';
+import { getFirestore, collection, getDocs, getDoc, addDoc, doc, updateDoc, deleteDoc, query, orderBy, limit, startAfter } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore-lite.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBJbWW8b12uV3qYlQgMuwPzkT6ogLtOZwY",
@@ -30,15 +30,29 @@ export async function getUsers() {
   return usersList;
 }
 
-export async function getItems() {
+export async function getAllItems() {
   const itemsCol = collection(db, 'items');
-  const itemsSnapshot = await getDocs(itemsCol);
+  const itemsSnapshot =  await getDocs(query(itemsCol, orderBy("sortMark")))
   const itemsList = itemsSnapshot.docs.map(doc => {
     let obj = doc.data()
     obj.id = doc.id;
     return obj
   });
   return itemsList;
+}
+
+export async function getItems(elementsCount = "") {
+  const itemsCol = collection(db, 'items');
+  const itemsSnapshot = elementsCount === "" ? 
+  await getDocs(query(itemsCol, orderBy("sortMark"), limit(8))) : 
+  await getDocs(query(itemsCol, orderBy("sortMark"), startAfter(elementsCount), limit(8)));
+  const itemsList = itemsSnapshot.docs.map(doc => {
+    let obj = doc.data()
+    obj.id = doc.id;
+    return obj
+  });
+  const lastVisible = itemsSnapshot.docs[itemsSnapshot.docs.length - 1];
+  return {itemsList,lastVisible};
 }
 
 export async function setUser(data) {
@@ -95,6 +109,11 @@ export async function updateItemByID(links, ID) {
   await updateDoc(itemRef, {
     photos: links
   });
+}
+
+export async function updateUserByID(ID, data) {
+  const userRef = doc(db, "users", `${ID}`);
+  await updateDoc(userRef, data);
 }
 
 export async function deleteItemById(ID) {

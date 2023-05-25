@@ -56,6 +56,7 @@
   font-size: 30px;
   font-weight: bold;
   overflow: hidden;
+  max-width: 500px;
 }
 .product-container .mainInfo .price {
   font-size: 20px;
@@ -92,5 +93,5 @@
 .product-container .discriptionText {
   overflow: hidden;
   text-indent: 20px;
-  height: 17px;
+  min-height: 17px;
 }

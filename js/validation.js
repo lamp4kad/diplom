@@ -9,8 +9,8 @@ export function validate(els) {
       //add item
       if (el.classList.contains("itemTitle")) {
         let value = el.value.trim()
-        if (value.length <= 0 || value.length >= 30) {
-          addInvalid(el, "Заголовок объявления не может быть пустым или содержать более 30-и символов")
+        if (value.length <= 0 || value.length >= 60) {
+          addInvalid(el, "Заголовок объявления не может быть пустым или содержать более 60-и символов")
         }
       }
 

@@ -1,5 +1,7 @@
-export function initSlider(el){
-  const swiper = new Swiper(`.swiper`, {
+let swiper;
+
+export function initSlider(el) {
+  swiper = new Swiper(`.swiper`, {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
@@ -8,4 +10,8 @@ export function initSlider(el){
     grabCursor: true,
     loop: true,
   });
+}
+
+export function updateSlider(){
+  swiper.update()
 }

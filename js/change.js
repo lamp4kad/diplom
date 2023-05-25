@@ -2,6 +2,7 @@ import { changeItemByID, getItemByID } from "./firebase.js";
 import { photos } from "./upload.js";
 import { setPicture, loadedFlags, links, updateItemByID } from "./firebase.js";
 import { validate } from "./validation.js";
+import { updateSlider } from "./slider.js";
 
 const title = document.querySelector(".itemTitle");
 const price = document.querySelector(".itemPrice");
@@ -10,6 +11,7 @@ const description = document.querySelector(".itemDescription");
 const changeItemBtn = document.querySelector(".changeItemBtn");
 const loader = document.querySelector(".loaderBackground");
 const swiperWrapper = document.querySelector(".swiper-wrapper");
+
 
 getItemByID(JSON.parse(localStorage.getItem("id"))).then(item => {
   loader.classList.add("open");
@@ -21,15 +23,24 @@ getItemByID(JSON.parse(localStorage.getItem("id"))).then(item => {
     swiperSlide.classList.add("swiper-slide")
     swiperSlide.innerHTML += ` 
     <div class="img">
+      <button class="deleteBtn">X</button>
       <img src="${photo}" alt="" data-old>
     </div>`
+    
     swiperWrapper.appendChild(swiperSlide)
   })
 }).then(some => loader.classList.remove("open"))
+.then(res => {
+  Array.from(document.querySelectorAll(".deleteBtn")).forEach(btn => {
+    btn.addEventListener("click", (e)=> {
+      e.preventDefault()
+      e.target.closest(".swiper-slide").remove()
+      updateSlider()
+    })
+  })
+})
 
 changeItemBtn.addEventListener("click", changeItem);
-
-
 
 let inputs = [title, price, description]
 

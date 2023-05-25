@@ -1,0 +1,69 @@
+@-webkit-keyframes backOpen {
+  0% {
+    opacity: 0;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0.5;
+    z-index: 2;
+  }
+}
+@keyframes backOpen {
+  0% {
+    opacity: 0;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0.5;
+    z-index: 2;
+  }
+}
+@-webkit-keyframes backClose {
+  0% {
+    opacity: 0.5;
+    z-index: 2;
+  }
+  99% {
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes backClose {
+  0% {
+    opacity: 0.5;
+    z-index: 2;
+  }
+  99% {
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+.blackBackground {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin-top: -60px;
+  z-index: -1;
+  -webkit-animation-name: backClose;
+          animation-name: backClose;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.blackBackground.open {
+  -webkit-animation-name: backOpen;
+          animation-name: backOpen;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  overflow: hidden;
+}

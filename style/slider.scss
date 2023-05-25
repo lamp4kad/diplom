@@ -16,6 +16,19 @@
     height: 100%;
     overflow: hidden;
 
+    .deleteBtn{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      border-radius: 50%;
+      border: 2px solid $blackColor;
+      background-color: $redColor;
+      width: 30px;
+      height: 30px;
+      color: $whiteColor;
+      font-size: 20px;
+    }
+
 
     img {
       max-width: 100%;

@@ -13,19 +13,37 @@
     }
   }
 
-  .my{
-    .item{
+  .my {
+    .item {
 
-      .item-wrapper{
+      .item-wrapper {
         flex-wrap: wrap;
         position: relative;
       }
 
-      .buttons{
+      .buttons {
         position: absolute;
         right: 0;
         bottom: 10px;
       }
+    }
+  }
+
+  .settings-container {
+    .changeUserSettings {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .warning {
+
+      .warningText {
+        text-align: center;
+      }
+    }
+
+    .changeUserSettingsBtn{
+      align-self: center;
     }
   }
 }

@@ -82,7 +82,6 @@ function regUser(e) {
       document.querySelector("html").classList.toggle("overflowHidden");
     }
   })
-
 }
 
 function openAuth() {
@@ -107,4 +106,3 @@ function closeBackground(e) {
   })
   document.querySelector("html").classList.toggle("overflowHidden");
 }
-

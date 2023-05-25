@@ -5,11 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="../css/change.css">
-  <link rel="stylesheet" href="../css/slider.css">
-  <link rel="stylesheet" href="../css/loader.css">
+  <title>Настройки пользователя</title>
+  <link rel="stylesheet" href="../css/settings.css">
   <link rel="stylesheet" href="../css/main.css">
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 </head>
@@ -46,57 +43,55 @@
     </div>
   </header>
   <main>
-    <div class="loaderBackground">
-      <div class="loader">
-        <div class="loaderOutCircle"></div>
-        <div class="loaderInCircle"></div>
-        <div class="around"></div>
-      </div>
-    </div>
-    <div class="newItem">
-      <div class="newItem-container">
-        <p class="title">Изменить объявление</p>
-        <form class="newItemForm">
-          <div class="photos">
-            <input type="file" class="upIMG" id="forImg" accept="image/png, image/jpeg">
-            <label for="forImg" class="uploadIMG">
-            </label>
-            <div class="swiper">
-              <div class="swiper-wrapper">
+    <div class="settings">
+      <div class="settings-container">
+        <p class="title">Настройки профиля</p>
+        <div class="changeUserSettings">
+          <div class="data">
+            <div class="FIO">
+              <span class="invalidText">Введите корректное ФИО</span>
+              <input type="text" placeholder="ФИО" class="fio" data-reg-field data-reg-fio>
+            </div>
+            <div class="log">
+              <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
+              <input type="text" placeholder="Логин" class="login" data-reg-field data-reg-login>
+            </div>
+            <div class="phone">
+              <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
+              <input type="tel" placeholder="Телефон" class="telephone" data-phone-pattern data-reg-field
+                data-reg-phone>
+            </div>
+            <div class="pass">
+              <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
+              <input type="password" placeholder="Пароль" class="password" data-reg-field data-reg-password>
+            </div>
+            <div class="city">
+              <p class="text">Область</p>
+              <div class="select-wrapper">
+                <div class="select" data-reg-city>Брестская обл.
+                </div>
+                <div class="select-menu cities">
+                </div>
               </div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
+            </div>
+            <div class="town">
+              <p class="text">Город</p>
+              <div class="select-wrapper">
+                <div class="select" data-reg-town>Антополь
+                </div>
+                <div class="select-menu towns">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="itemData">
-            <div class="data">
-              <label class="title" for="itemTitle">Название</label>
-              <div class="input-container">
-                <input type="text" class="itemTitle itemInput" id="itemTitle" placeholder="Введите текст" data-add-item>
-              </div>
-              <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
-            </div>
-            <div class="data">
-              <label class="title" for="itemPrice">Цена</label>
-              <div class="input-container">
-                <input type="number" class="itemPrice itemInput" id="itemPrice" placeholder="Введите текст"
-                  data-add-item>
-              </div>
-              <span class="invalidText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, hic?</span>
-            </div>
-            <div class="data">
-              <label class="title" for="itemDescription">Описание</label>
-              <div class="textArea-container">
-                <textarea type="" class="itemDescription itemInput" id="itemDescription" placeholder="Введите текст">
-
-                </textarea>
-              </div>
-            </div>
-            <button class="changeItemBtn">Разместить объявление</button>
+          <div class="warning">
+            <p class="warningText">
+              После изменения данных они будут применены <span>МОМЕНТАЛЬНО!</span>
+            </p>
           </div>
-        </form>
+        </div>
+        <button class="changeUserSettingsBtn">Изменить профиль</button>
       </div>
-    </div>
     </div>
   </main>
   <footer>
@@ -117,12 +112,9 @@
       </div>
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" type="module"></script>
   <script src="../js/script.js" type="module"></script>
-  <script src="../js/slider.js" type="module"></script>
-  <script src="../js/upload.js" type="module"></script>
-  <script src="../js/change.js" type="module"></script>
-
+  <script src="../js/cities.js" type="module"></script>
+  <script src="../js/settings.js" type="module"></script>
 </body>
 
 </html>

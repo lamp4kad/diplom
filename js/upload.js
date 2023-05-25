@@ -1,10 +1,10 @@
-import { initSlider } from "./slider.js";
+import { initSlider, updateSlider } from "./slider.js";
 const pictureInput = document.querySelector(".upIMG");
 const swiperWrapper = document.querySelector(".swiper-wrapper");
 
 pictureInput.addEventListener("change", getFile)
 
-initSlider(document.querySelector(".swiper"))
+initSlider()
 
 let fileItem;
 export let photos = [];
@@ -13,13 +13,21 @@ function getFile(e) {
   fileItem = e.target.files[0];
   let reader = new FileReader();
   reader.onload = function (e) {
-    swiperWrapper.innerHTML += `
-    <div class="swiper-slide">
+    let swiperSlide = document.createElement("div");
+    swiperSlide.classList.add("swiper-slide")
+    swiperSlide.innerHTML += `
       <div class="img">
-        <img src="${e.target.result}" alt="" loading="lazy">
+        <button class="deleteBtn">X</button>
+        <img src="${e.target.result}" alt="" loading="lazy" data-name = "${fileItem.name}">
       </div>
-    </div>
-  `
+    `
+    swiperSlide.querySelector(".deleteBtn").addEventListener("click", (e) => {
+      e.preventDefault()
+      e.target.closest(".swiper-slide").remove()
+      photos.splice(photos.map(item => item.name).indexOf(fileItem.name), 1)
+      updateSlider()
+    })
+    swiperWrapper.appendChild(swiperSlide)
   }
   reader.readAsDataURL(fileItem);
   photos.push(fileItem)

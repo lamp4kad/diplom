@@ -1,0 +1,181 @@
+@import "variables";
+
+@keyframes authOpen {
+  0% {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+@keyframes authClose {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  99% {
+    z-index: 2;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.auth {
+  padding: 30px 20px;
+  background: $whiteColor;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 2px solid black;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: -1;
+  animation-name: authClose;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  max-width: 273px;
+
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow: hidden;
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .log {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/login.svg") no-repeat;
+        background-size: cover;
+      }
+
+
+    }
+
+    .pass {
+      display: flex;
+      flex-direction: column;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/lock.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .log,
+    .pass {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid black;
+    }
+
+    .login,
+    .login:focus,
+    .password,
+    .password:focus {
+      font-family: $comfortaaRegular;
+      border: none;
+      padding: 5px 5px 5px 0px;
+      margin-left: 30px;
+      outline: none;
+      width: 200px;
+    }
+
+    .authBtn {
+      border: none;
+      background-color: $blackColor;
+      color: $whiteColor;
+      padding: 7px;
+      border-radius: 5px;
+      font-family: $comfortaaRegular;
+      cursor: pointer;
+      position: relative;
+      background-image: linear-gradient($orangeColor, $orangeColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 30px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-size: 100% 30px;
+
+        &::before {
+          transform: translate(230px, -50%);
+        }
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background: url("../assets/svg/arrowLeft.svg") no-repeat;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-50%);
+        transition: all 0.3s;
+      }
+    }
+
+    .regLink {
+      overflow: hidden;
+      align-self: center;
+      margin-top: -15px;
+      color: $blackColor;
+      transition: all 0.3s;
+      cursor: pointer;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 1px;
+      background-color: transparent;
+      font-family: $comfortaaRegular;
+      border: none;
+
+      &:hover {
+        background-size: 100% 1px;
+        color: $orangeColor;
+      }
+    }
+  }
+
+  &.open {
+    animation-name: authOpen;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+  }
+}

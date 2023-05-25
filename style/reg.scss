@@ -1,4 +1,6 @@
-@keyframes authOpen {
+@import "variables";
+
+@keyframes regOpen {
   0% {
     opacity: 0;
     z-index: 2;
@@ -10,7 +12,7 @@
   }
 }
 
-@keyframes authClose {
+@keyframes regClose {
   0% {
     opacity: 1;
     z-index: 2;
@@ -26,28 +28,29 @@
   }
 }
 
-.auth {
+.reg {
   padding: 30px 20px;
+  max-height: 100%;
   background: $whiteColor;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
   border: 2px solid black;
   border-radius: 10px;
   opacity: 0;
   z-index: -1;
-  animation-name: authClose;
+  animation-name: regClose;
   animation-duration: 0.3s;
   animation-fill-mode: both;
-  max-width: 273px;
+  overflow: auto;
+  max-width: 300px;
 
-  .auth-container {
+  .reg-container {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    overflow: hidden;
+    overflow: visible;
 
     .title {
       font-size: 30px;
@@ -56,35 +59,68 @@
       margin-bottom: 10px;
     }
 
-    .log {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-
+    .FIO {
       &::before {
         content: "";
         display: inline-block;
         position: absolute;
-        bottom: 0px;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/user.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .mail {
+      &::before {
+        content: "@";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        padding-left: 5px;
+      }
+    }
+
+    .log {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
         left: 0;
         width: 30px;
         height: 30px;
         background: url("../assets/svg/login.svg") no-repeat;
         background-size: cover;
       }
-
-
     }
 
-    .pass {
-      display: flex;
-      flex-direction: column;
-
+    .phone {
       &::before {
         content: "";
         display: inline-block;
         position: absolute;
-        bottom: 0px;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url("../assets/svg/phone.svg") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .pass {
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
         left: 0;
         width: 30px;
         height: 30px;
@@ -93,15 +129,26 @@
       }
     }
 
+    .FIO,
     .log,
+    .mail,
+    .phone,
     .pass {
+      display: flex;
+      flex-direction: column;
       position: relative;
       overflow: hidden;
       border-bottom: 2px solid black;
     }
 
+    .fio,
+    .fio:focus,
+    .email,
+    .email:focus,
     .login,
     .login:focus,
+    .telephone,
+    .telephone:focus,
     .password,
     .password:focus {
       font-family: $comfortaaRegular;
@@ -112,7 +159,7 @@
       width: 200px;
     }
 
-    .authBtn {
+    .regBtn {
       border: none;
       background-color: $blackColor;
       color: $whiteColor;
@@ -149,30 +196,19 @@
       }
     }
 
-    .regLink {
-      overflow: hidden;
-      align-self: center;
-      margin-top: -15px;
-      color: $blackColor;
-      transition: all 0.3s;
-      cursor: pointer;
-      background-image: linear-gradient(currentColor, currentColor);
-      background-position: 0% 100%;
-      background-repeat: no-repeat;
-      background-size: 0% 1px;
-      background-color: transparent;
-      font-family: $comfortaaRegular;
-      border: none;
+    .city,
+    .town {
+      overflow: visible;
 
-      &:hover {
-        background-size: 100% 1px;
-        color: $orangeColor;
+      .text {
+        overflow: hidden;
+        font-size: small;
       }
     }
   }
 
   &.open {
-    animation-name: authOpen;
+    animation-name: regOpen;
     animation-duration: 0.3s;
     animation-fill-mode: both;
   }

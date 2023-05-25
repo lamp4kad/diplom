@@ -68,7 +68,7 @@
   opacity: 0.5;
 }
 .newItem-container .itemData {
-  min-width: 330px;
+  min-width: 280px;
   max-width: 460px;
   display: -webkit-box;
   display: -ms-flexbox;
